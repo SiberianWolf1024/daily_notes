@@ -24,9 +24,8 @@
 
 #### **Git的工作原理：**
 
-![image-20230803100930900](https://cdn.jsdelivr.net/gh/Siberianwolf926/typora_images@master/img/202308031009950.png)
-
-![image-20230803100940382](https://cdn.jsdelivr.net/gh/Siberianwolf926/typora_images@master/img/202308031009419.png)
+![202308031009419](https://cdn.jsdelivr.net/gh/SiberianWolf1024/typora_images@master/img/202411061522655.png)
+![202308031009950](https://cdn.jsdelivr.net/gh/SiberianWolf1024/typora_images@master/img/202411061522831.png)
 
 ### Linux下服务器配置git公钥到GitLab
 
@@ -56,7 +55,7 @@ ls
 
 可以看到一个私钥 **id_rsa** ，一个公钥 **id_rsa.pub**
 
-![image-20231025141850457](https://cdn.jsdelivr.net/gh/Siberianwolf926/typora_images@master/img/202310251418483.png)
+![202310251418483](https://cdn.jsdelivr.net/gh/SiberianWolf1024/typora_images@master/img/202411061522193.png)
 
 4.进入id_rsa.pub复制公钥内容
 
@@ -66,7 +65,7 @@ vim id_rsa.pub
 
 5.进入GitLab官网点击头像，点击偏好设置（preference），进入**SSH Keys**，将公钥内容复制进去，选择到期时间后提交
 
-![image-20231025142634554](https://cdn.jsdelivr.net/gh/Siberianwolf926/typora_images@master/img/202310251426612.png)
+![202310251426612](https://cdn.jsdelivr.net/gh/SiberianWolf1024/typora_images@master/img/202411061522860.png)
 
 6.回到Linux终端，将 id_rsa加入ssh-gent：
 
