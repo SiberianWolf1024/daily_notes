@@ -144,8 +144,6 @@ int main() {
 
 按F1键，输入  Developer: Toggle Developer Tools回车，接着搜索插件，注意弹出的错误信息
 
-![vevev](https://cdn.jsdelivr.net/gh/Siberianwolf926/typora_images@master/img/202310262137648.png)
-
 说明vscode连不上 marketplace.visualstudio.com/_apis/public/gallery/extensionquery:1
 
 先ping一下这个网址，能ping成功则可进行下一步
@@ -155,8 +153,6 @@ ping marketplace.visualstudio.com
 ```
 
 然后打开查询ip的网站https://ip.tool.chinaz.com/查询，记住ip
-
-![image-20231026213839323](https://cdn.jsdelivr.net/gh/Siberianwolf926/typora_images@master/img/202310262138350.png)
 
 打开终端，输入sudo nano /etc/hosts命令进入hosts文件，在任意一行写上 **刚才的查询的ip地址+空格+连接不上的域名**，如我是13.107.42.18 marketplace.visualstudio.com，然后Ctrl+O再回车保存，Ctrl+X退出编辑，重启vscode即可
 
@@ -218,7 +214,30 @@ ppp-rtk-development编译时一直报错找不到动态库
 cmake  -DCMAKE_BUILD_TYPE=Release .. 
 ```
 
+长时间运行某个程序后发生崩溃，查看系统日志了解崩溃原因
+
 ```c++
-https://zhuanlan.zhihu.com/p/373256365
+// 进入日志文件夹
+cd /var/log
+// 查看对应日期的日志
+sudo vim messages
+// 搜索关于demo的记录
+/demo
+// 跳转下一个搜索的记录
+n
+```
+
+编译protobuf的C++文件
+
+```c++
+// 设置动态链接器查找共享库的路径为当前路径
+export LD_LIBRARY_PATH=./
+./protoc --cpp_out=. user.proto
+```
+
+启动一个程序并使其在用户退出或会话终止后仍然继续运行
+
+```c++
+nohup ./demo &
 ```
 

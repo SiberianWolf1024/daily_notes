@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 
 剩下的文件都是要用到的，删除完重启.exe文件看看是否还能运行，能运行则保持运行状态继续删除外面的include文件夹，删完再尝试重启.exe文件是否能运行，按照这个方法尝试把能不影响启动运行的文件全部删除，保留剩下的必要的文件，我这里是还剩下这四个文件夹，到此就完成了。
 
-![image-20231108145651671](https://cdn.jsdelivr.net/gh/Siberianwolf926/typora_images@master/img/202311081456708.png)
+![image-20241129152023445](https://cdn.jsdelivr.net/gh/SiberianWolf1024/typora_images@master/img/202411291520541.png)
 
 
 
@@ -123,10 +123,6 @@ Qt中默认引用
 ```
 
 想要在Qt中改为使用`CreateDirectoryW` 的话，需要把CreateFile()改成CreateFileA()函数
-
-![image-20231108150029370](https://cdn.jsdelivr.net/gh/Siberianwolf926/typora_images@master/img/202311081500398.png)
-
-
 
 
 

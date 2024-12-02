@@ -170,3 +170,63 @@ b = b + 1; //自动转换为 *b = *b + 1;
 
 
 
+计算函数的耗时
+
+```c++
+#include <iostream>
+#include <chrono>
+
+    // 获取当前时间点
+    auto start = std::chrono::high_resolution_clock::now();
+
+    // 调用目标函数
+    myFunction();
+
+    // 获取结束时间点
+    auto end = std::chrono::high_resolution_clock::now();
+
+    // 计算时间差
+    std::chrono::duration<double> duration = end - start;
+
+    // 输出执行耗时（秒）
+    std::cout << "Function execution time: " << duration.count() << " seconds" << std::endl;
+    
+    // 或者选择计算输出结果单位为毫秒
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+
+    // 输出执行耗时（毫秒）
+    std::cout << "Time in milliseconds: " << duration.count() << " milliseconds" << std::endl;
+
+```
+
+##### VS2022在项目中使用动态库
+
+###### 1. **添加包含目录**：
+
+- 右键点击项目，选择 **属性**。
+
+- 在 **C/C++** -> **常规** -> **附加包含目录** 中，添加DLL项目的头文件路径，路径推荐使用相对路径，这样项目在不同的环境下都能正常找到目的路径，例如：
+
+  ```c++
+  $(SolutionDir)path\to\myLibrary\include
+  ```
+
+###### 2. **添加库目录**：
+
+- 在 **链接器** -> **常规** -> **附加库目录** 中，添加包含DLL库文件的路径。例如：
+
+  ```c++
+  $(SolutionDir)path\to\myLibrary\lib
+  ```
+
+###### 3. **链接动态库**：
+
+- 在 **链接器** -> **输入** -> **附加依赖项** 中，添加 `myLibrary.lib`（这是静态链接库文件，它是生成 DLL 时编译的静态库）
+
+  ```c++
+  myLibrary.lib
+  ```
+
+###### 4. **确保 DLL 在运行时可用**：
+
+- 将 `myLibrary.dll` 文件放置在可执行文件（`.exe`）的同一目录下
