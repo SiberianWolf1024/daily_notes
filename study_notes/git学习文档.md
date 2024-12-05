@@ -88,13 +88,16 @@ cat ~/.ssh/id_rsa.pub
 ![202310251426612](https://cdn.jsdelivr.net/gh/SiberianWolf1024/typora_images@master/img/202411061522860.png)
 
 6.Linux下（Windows下忽略此步骤）
+回到Linux终端，将 id_rsa加入ssh-gent：
 
 ```c++
-// 回到Linux终端，将 id_rsa加入ssh-gent：
 ssh-add ~/.ssh/id_rsa
+```
 
-// 如果报错："Could not open a connection to your authentication agent"
-// 那么执行下面两行，重新加入：
+如果报错：`Could not open a connection to your authentication agent.`
+那么执行下面两行，重新加入：
+
+```c++
 ssh-agent bash
 ssh-add ~/.ssh/id_rsa
 ```
