@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # 设置项目名称和版本
-project(MyProject VERSION 1.0)
+project(MyProject)
 
 # 设置默认的编译方式为 Debug
 if(NOT CMAKE_BUILD_TYPE)
